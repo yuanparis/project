@@ -15,12 +15,12 @@
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         //request.setRequestHeader("Content-Length", 2); // 2即为参数的个数  
         request.onreadystatechange = updatePage;
-        var strName = "13111111112";
-        var strPwd = "test2";
+        var strName = "13111111113";
+        var strPwd = "test3";
         request.send("contact_person_mobile=" + strName + "&contact_person=" + strPwd); //发送参数的数据，可自行组合  
 
         function updatePage() {
-            if (request.readyState == 4 && (request.status == 200 || request.status == 304)) {  // 304未修改
+            if (request.readyState == 4 && request.status == 200) {
                 var text = request.responseText;
 
                 console.log(text);
