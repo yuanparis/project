@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    rem能等比例适配所有屏幕
+
+    rem是通过根元素进行适配的，网页中的根元素指的是html,通过设置html的字体大小就可以控制rem的大小
+
+    如果你没有在根元素指定参照值，那浏览器默认就是 1rem 为 16px,如果你指定了值假设为 20px，那 1rem 就为 20px。
+
+    font-size和line-height本来默认就不是一样的，设置line-height: 1;就一样高了
+
+    都知道现在手机屏幕分辨率越来越多了，假设我们的网页需要适配的
+    iPhone4（320px），iPhone6(375px)，iPhone6 Plus(414px)。
+
+    将html设成100px,即1rem=100px
+    让1rem等于100px,比如设计师给的是高清的视觉稿750px
+    1.设置页面的rem大小
+        html {
+        font-size: calc(100vw/7.5);
+        }
+        100vw是设备的宽度，除以7.5可以让1rem的大小在750px下等于100px
+    2.替换页面中的单位，把所有的px单位替换成rem，除以100，比如80px，就是0.8rem
+        这样就可以做到针对任何分辨率的设备保持视觉一致了。
+    3.最后，前面用到vw单位，但是低版本的设备可能不支持，那么就需要js来处理一下：
+    document.documentElement.style.fontSize = window.innerWidth/7.5 + 'px'
+
+
+
+    移动端适配等式:
+    设备宽度/设计稿宽度 = 某个元素某一距离实际值/该元素在设计稿的值
+    例子:
+    一个5s宽度320/设计稿宽度640 = 一个元素的高度未知/设计稿上它的高度为20
+
+    可以推出它的实际高度为10，通常我们使用rem作为等式前的值，但是因为太小无法作为html根字体大小使用，所以适当放大，通常为了方便计算，放大100倍，即为:
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 640 (或实际设计稿宽度) * 100
+    那么此时在设计稿上量的的某一距离，比如43px，就等于0.43rem。
+
+    至于文字，我们通常不用rem，因为由于不同的rem计算方式会产生很多奇怪的大小，使得文字出现糊掉或者模糊的情况，通常我们使用媒体查询事先设置好body的字体大小，这样来确保文字的正常显示。
+    即为:rem处理适配距离的问题，em处理文字大小问题。
+
+
+</body>
+</html>

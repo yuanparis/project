@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        /*content字符生成配合CSS3 animation点点点动画1*/
+        dot {
+            display: inline-block;
+            height: 1em;
+            line-height: 1;
+            text-align: left;
+            vertical-align: -.25em;
+            overflow: hidden;
+        }
+
+            dot::before {
+                display: block;
+                content: ".\A..\A...";
+                white-space: pre-wrap; /* 也可以是white-space: pre */
+                animation: dot 2s infinite step-start both;
+            }
+
+        @keyframes dot {
+            33% {
+                transform: translateY(-2em);
+            }
+
+            66% {
+                transform: translateY(-1em);
+            }
+        }
+
+        /*content字符生成配合CSS3 animation点点点动画2*/
+        .loading{
+
+        }
+        .loading::before{
+            display:block;
+            content:"...\A..\A.";
+            white-space:pre;
+            animation:spin 2s steps(4) infinite;
+        }
+        @keyframes spin {
+            33% {
+                transform: translateY(-2em);
+            }
+
+            66% {
+                transform: translateY(-1em);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        提交中<dot>...</dot>
+    </div>
+    <div>
+        <span class="loading"></span>
+    </div>
+</body>
+</html>

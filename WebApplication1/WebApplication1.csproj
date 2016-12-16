@@ -64,10 +64,35 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSSBackground.html" />
+    <Content Include="CSSBorder.html" />
+    <Content Include="CSSContent.html" />
+    <Content Include="CSSPosition.html" />
+    <Content Include="CSSRem.html" />
+    <Content Include="CSSSprites.html" />
+    <Content Include="CSSZoom.html" />
     <Content Include="Global.asax" />
+    <Content Include="CSSFloat.html" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="images\1.png" />
+    <Content Include="images\2.png" />
+    <Content Include="images\3.png" />
+    <Content Include="images\4.png" />
+    <Content Include="images\attention.gif" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\rem.jpg" />
+    <Content Include="images\sprites.png" />
+    <Content Include="images\icon-praise.png" />
+    <Content Include="CSS-inline-block.html" />
     <Content Include="JavaScript.js" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="Swiper-3.4.0\css\animate.min.css" />
+    <Content Include="Swiper-3.4.0\css\swiper-3.4.0.min.css" />
+    <Content Include="Swiper-3.4.0\HtmlSwiper.html" />
+    <Content Include="Swiper-3.4.0\js\jquery-1.10.1.min.js" />
+    <Content Include="Swiper-3.4.0\js\swiper-3.4.0.jquery.min.js" />
+    <Content Include="Swiper-3.4.0\js\swiper-3.4.0.min.js" />
+    <Content Include="Swiper-3.4.0\js\swiper.animate1.0.2.min.js" />
     <Content Include="UrlRewrite.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -75,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\ReWriteUrl.cs" />
+    <Content Include="App_Code\Constants.cs" />
+    <Content Include="App_Code\EncryptionHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -118,6 +145,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

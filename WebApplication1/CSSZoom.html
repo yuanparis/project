@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .retina_box{width:326px; height:680px; margin-left:auto; margin-right:auto; background:url(http://image.zhangxinxu.com/image/blog/201008/retina-gallery-bg.jpg) no-repeat; position:relative;}
+.retina_image{margin:112px 0 0 27px;}
+.retina_radius{width:220px; height:220px; margin-left:-90px; border-width:3px; border-style:solid; border-color:#fff; -moz-border-radius:110px; -webkit-border-radius:110px; border-radius:110px; background:url(http://image.zhangxinxu.com/image/blog/201008/retina-gallery-large.jpg); -moz-box-shadow:0 4px 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.25) inset; -webkit-box-shadow:rgba(0, 0, 0, 0.6) 0px 4px 5px; box-shadow:0 4px 5px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.25) inset; position:absolute; left:0; top:0;}
+.retina_radius_ie{display:none; display:block\9; _display:none; position:absolute; left:-7px; top:-7px;}
+    </style>
+    <script>
+        //IE圆角
+        DD_roundies.addRule(".retina_radius", "110px");
+        //效果
+        var oRetina = $("#retinaImage"), tRetina = $("#retinaRadius");
+        var fnRetinaZoom = function (obj, target, scaleX, scaleY) {
+            var pms = {
+                hoverX: 0,
+                hoverY: 0,
+                posX: 0,
+                posY: 0
+            };
+            obj.hover(function (e) {
+                pms.hoverX = e.pageX;
+                pms.hoverY = e.pageY;
+                fnFollowZoom();
+            });
+            target.mousemove(function (e) {
+                var x = e.pageX, y = e.pageY, l = obj.offset().left, t = obj.offset().top, w = obj.width(), h = obj.height();
+                pms.hoverX = x;
+                pms.hoverY = y;
+                //范围限定
+                if (x < l) {
+                    pms.hoverX = l;
+                }
+                if (x > l + w) {
+                    pms.hoverX = l + w;
+                }
+                if (y < t) {
+                    pms.hoverY = t;
+                }
+                if (y > t + h) {
+                    pms.hoverY = t + h;
+                }
+                fnFollowZoom();
+            });
+            var fnFollowZoom = function () {
+                pms.posX = pms.hoverX - obj.offset().left;
+                pms.posY = pms.hoverY - obj.offset().top;
+                target.css({
+                    left: pms.posX,
+                    top: pms.posY,
+                    backgroundPosition: (-pms.posX * scaleX) + "px " + (-pms.posY * scaleY) + "px"
+                });
+            };
+        }(oRetina, tRetina, 1.524, 1.78);
+    </script>
+</head>
+<body>
+    <div class="retina_box">
+        <div id="retinaRadius" class="retina_radius">
+            <img class="retina_radius_ie" src="http://image.zhangxinxu.com/image/blog/201008/hover-zoom-ie-tail.png" width="241" height="241" />
+        </div>
+        <img id="retinaImage" class="retina_image" src="http://image.zhangxinxu.com/image/blog/201008/retina-gallery.jpg" width="276" height="413" />
+    </div>
+</body>
+</html>

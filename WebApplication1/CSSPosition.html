@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .box {
+            position:relative;
+            /*width: 500px;
+            height: 400px;*/
+            border: 2px solid yellow;
+            margin: 100px auto;
+        }
+
+        .box1 {
+            position:absolute;
+            top:10px;
+            width: 100px;
+            height: 100px;
+            background-color: palevioletred;
+        }
+
+        .box2 {
+            position:absolute;
+            top:20px;
+            width: 120px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .box3 {
+            position:fixed;
+            top:30px;
+            width: 140px;
+            height: 100px;
+            background-color: dodgerblue;
+        }
+
+        p {
+            background-color: yellow;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .clearfix {
+        }
+
+            .clearfix:after {
+                clear: both;
+                display: block;
+                visibility: hidden; /*设置不可见*/
+                height: 0;
+                line-height: 0;
+                content: "";
+            }
+    </style>
+</head>
+<body>
+    <!--
+        常是父级定义position:relative定位，子级定义position:absolute绝对定    通位属性，并且子级使用left或right和top或bottom进行绝对定位。
+
+        三、相对定位、绝对定位
+        1，相对定位relative
+        a.相对自身偏移（相对于自身进行定位，所设置偏移属性的参照物为本身原来的位置）
+        b.元素原来的位置不脱离文档流，占据了位置
+        2,绝对定位absolute
+        a.脱离文档流，和float一样脱离文档流，但是无法清除浮动也不占据位置,重叠在一起
+        b.排在文档流后面的绝对定位元素显示的优先级高于前面的绝对定位元素
+        c.绝对定位，找最近的设置有定位属性的父元素做为参照物进行定位，如果都没有定位属性以body做完参照物
+        3,绝对定位fixed
+        脱离文档流，不占据位置，固定在屏幕，不会对文档流造成影响
+
+        小技巧：当position为absolute时，left:50%,margin-left:-width/2，可以保证元素水平居中。
+        如果想垂直也居中，则使用 top:50%,margin-top:-height/2
+        -->
+    <div class="box">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>

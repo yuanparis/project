@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        ul.sprits{
+            margin:0 auto;
+            border:1px solid #0094ff;
+            width:300px;
+            padding:10px;
+        }
+        ul.sprits li{
+            overflow:hidden;/*清除子元素的浮动*/
+            list-style:none;
+            height:24px;
+            line-height:14px;
+            font-size:14px;
+            text-align:left;
+        }
+        ul.sprits li a{           
+            padding-left:5px;
+        }
+        ul.sprits li span{
+            float:left;
+            width:18px;
+            height:18px;
+            background:url(images/sprites.png) no-repeat;
+            /*background-size:18px 18px;*/
+        }
+        ul.sprits li span.s1{
+            background-position:-62px -37px;
+        }
+        ul.sprits li span.s2{
+            background-position:-86px -37px;
+        }
+        ul.sprits li span.s3{
+            background-position:-110px -37px;
+        }
+        ul.sprits li span.s4{
+            background-position:-134px -37px;
+        }
+        ul.sprits li span.s5{  
+           background-position:-158px -37px;
+        }
+    </style>
+</head>
+<body>
+    <!--Height:auto 设置高度自动
+    （通常默认高度是auto自动，自适用内容而增高，通常如果想高度自适应不用设置）
+    Height:20px 设置高度为固定数值
+
+    background的position 0 0：第1个参数：距左多少像素、第2个参数：距上多少像素；
+    或者 left/right:图片靠左右；top/bottom:图片靠上下；center:居中
+    background-position:10px（水平左中右） 20px（垂直上下）
+
+    Div{background-position:10px 20px}
+    代表图片作为对象背景时在对象内距离左侧10px和距离上边20px开始显示背景图片。
+    2、background-position的属性值介绍
+    background-position后可跟2个值，2个值用空格间隔开，第一个值，固定代表水平方向（横向）左、中、右距离，第二个值，固定代表垂直上、下距离。
+    3、background-position第一个值可根值
+    1）、具体数字+单位，如（可为正整数值 如10px，也可为负整数值 -10px 整数+单位）
+    2)、百分比，如（10%）
+    3）、left(背景图片靠对象左侧开始显示)
+    4)、center(图片作为对象背景水平居中显示)
+    5）、right(背景图片靠对象右侧开始显示)
+    4、background-position第二个值可根值
+    1）、具体数字+单位，如（可为正整数值 如10px，也可为负整数值 -10px 整数+单位）
+    2)、百分比，如（10%）
+    3）、top(背景图片靠对象紧贴顶部开始显示)
+    4)、bottom(背景图片靠对象紧贴底部开始显示)-->
+    <ul class="sprits">
+        <li><a>word</a><span class="s1"></span></li>
+        <li><span class="s2"></span><a>ppt</a></li>
+        <li><span class="s3"></span><a>excel</a></li>
+        <li><span class="s4"></span><a>pdf</a></li>
+        <li><span class="s5"></span><a>txt</a></li>
+    </ul>
+</body>
+</html>

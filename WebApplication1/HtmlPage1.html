@@ -4,8 +4,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 	<meta charset="utf-8" />
+    
 </head>
 <body>
-html5页面test
+    谷歌浏览器Chrome是Webkit的内核，有一个 -webkit-text-size-adjust 的私有 CSS 属性，通过它即可实现字体大小不随终端设备或浏览器影响。
+    CSS样式定义如下：
+    -webkit-text-size-adjust:none;
+
+    单词text-indent开头距离-缩进，letter-spacing字与字间距
+
+    line-height行高属性，运用到对文字排版，实现上下排文字间隔距离，以及单排文字在一定高度情况上下垂直居中布局。
+    1、对于文章类文字上下排间隔
+    一般我们对对象设置设置line-height行高属性即可实现让自动换行文字排版均匀间隔多少设置。
+    2、对单排文字上下垂直居中
+    假如我们一个固定30px高度div对象，如果要让其文字内容上下垂直居中，我们即可使用line-height:30px即可。
+
+    text-overflow：
+    clip : 　不显示省略标记（...），而是简单的裁切
+    ellipsis : 　当对象内文本溢出时显示省略标记（...）
+
+    white-space：
+    nowrap : 　强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。DIVCSS5推荐使用white-space:nowrap强制不换行。
+    white-space设置或检索对象内文本显示方式。通常我们使用于强制一行显示内容
+    通常我们使用white-space:nowrap强制文本文字内容不换行，在对象内一行显示完所有文字内容。
+
+    Hook(钩子)，是windows消息处理机制的一个平台，应用程序可以在上面设置子程序一监视指定窗口的某种消息，
+        而且所监视的窗口可以是其他进程所创建的。当消息到达后，在目标窗口处理函数之前处理它。
+        钩子机制允许应用程序截获处理window消息或特定事件。
+        钩子实际上是一个处理消息的程序段，通过系统调用，把它挂入系统。
+        每当特定的消息发出，在没有到达目的窗口前，钩子程序就先捕获改消息，
+        即钩子函数先得到控制权。
+        这时钩子函数就可以加工处理改消息，也可以不作处理而继续传递改消息，
+        还可以强制结束消息的传递。
+
+
 </body>
 </html>

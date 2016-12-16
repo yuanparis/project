@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .box {
+            width: 500px;
+            height: 400px;
+            /*overflow:hidden;
+            zoom:1;*//*兼容ie6*/
+            border:2px solid yellow;
+            margin:100px auto;
+        }
+        .box1{
+            float:left;
+            width:100px;
+            height:100px;
+            background-color:palevioletred;
+        }
+        .box2{
+            float:left;
+            width:120px;
+            height:100px;
+            background-color:green;
+            position:relative;
+            top:-20px;
+        }
+        .box3{p
+            float:left;
+            /*overflow:hidden;*/
+            width:140px;
+            height:100px;
+            background-color:dodgerblue;
+            /*clear:both;*/
+        }
+        p{
+            background-color:yellow;
+        }
+        .clear{clear:both;}
+        .clearfix{}
+        .clearfix:after{
+            clear:both;
+            display:block;
+            visibility:hidden;/*设置不可见*/
+            height:0;
+            line-height:0;
+            content:"";
+        }
+    </style>
+</head>
+<body>
+    <!--
+        一、浮动:
+        1,浮动脱离文档流（在原来的位置中脱离出来，可以理解为漂浮起来）
+        a.浮动只对后面的元素造成影响：若浮动元素后面有不浮动的元素，那么其后面不浮动的元素会把浮动元素视为消失，然后顶替到它的位置中；
+        b.对于排在它前面的同级块元素，不会对其位置造成影响；
+        c.对于排在它前面的同级内联元素，由于设置了浮动的元素与排在它前面的内联元素属于同一个层面，但是位置优先级高于前面的同级内联元素，这样，后面的同级内联元素就让位与浮动的元素而处于浮动元素的边上位置；
+        d.文字永远会被挤出
+        2,没有固定尺寸的父元素，无法自适应浮动的子元素（所有子元素都为浮动）
+        二、清除浮动（避免浮动后对其他元素造成影响）
+        1，清除浮动方法（非父元素受影响--用在受影响的非父元素上）
+        a.设置clear属性，这个属性设置在受影响的元素（非父级）上（clear:both,left,right）
+        b.额外设置一个空元素，设置clear属性
+        2,清除浮动方法（父元素受影响--用在受影响的父元素上）
+        a.在父元素里添加一个空的子元素，放到最后面，设置clear属性
+        b.在父元素上设置overflow:hidden(有个弊端：overflow的3个属性会对子元素超出父元素的部分不显示出来，可能造成信息缺失)
+        overflow:visible(默认值)、inherit(集成)、如果设置了其他3个属性值（hidden,scroll,auto）那么该元素就会与浮动元素在同一个层面,自然就会排在浮动元素的边上而不会占据浮动元素原来的位置。
+        ie6及以下版本中，overflow不起作用，需要多加一个设置：zoom:1;
+        c.推荐的方法：使用自定义的伪类，设置清除属性，然后在父级添加这个类即可
+        三、相对定位、绝对定位
+        1，相对定位relative
+        a.相对自身偏移（相对于自身进行定位，所设置偏移属性的参照物为本身原来的位置）
+        b.元素原来的位置不脱离文档流，占据了位置
+        2,绝对定位absolute
+        a.脱离文档流，和float一样脱离文档流，但是无法清除浮动也不占据位置,重叠在一起
+        b.排在文档流后面的绝对定位元素显示的优先级高于前面的绝对定位元素
+        c.绝对定位，找最近的设置有定位属性的父元素做为参照物进行定位，如果都没有定位属性以body做完参照物
+
+        -->
+    <div class="box clearfix">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <!--<div class="clear"></div>-->
+        <!--<p>HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! 10个HelloWorld！</p>-->
+    </div>
+</body>
+</html>
